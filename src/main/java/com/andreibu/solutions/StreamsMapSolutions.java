@@ -1,8 +1,11 @@
 package com.andreibu.solutions;
 
 import com.andreibu.base.StreamsBase;
+import com.andreibu.models.SomeModel;
 
+import java.util.AbstractMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StreamsMapSolutions extends StreamsBase {
@@ -44,18 +47,25 @@ public class StreamsMapSolutions extends StreamsBase {
     }
 
     private void buildNewSomeModelCollectionWithZeroIntegerValueAndPrintIt() {
-
+        List<SomeModel> newSomeModelCollection = someModelCollection.stream().filter(m -> m.getIntValue() == 0)
+                .map(m -> new SomeModel(m.getIntValue(), m.getStringValue(), m.getFloatValue())).collect(Collectors.toList());
+        println(newSomeModelCollection);
     }
 
     private void buildNewStringModelCollectionUsingStringValueAddingAPrefixAndPrintIt() {
-        // TODO Implement
+        List<SomeModel> newSomeModelCollection = someModelCollection.stream()
+                .map(m -> new SomeModel(m.getIntValue(), "APrefix" + m.getStringValue(), m.getFloatValue())).collect(Collectors.toList());
+        println(newSomeModelCollection);
     }
 
     private void buildNewSomeModelMapWhereKeyIsTheIDPlusString10AndPrintIt() {
-        // TODO Implement
+        Map<String, SomeModel> newMap = someModelCollection.stream()
+                .map(m -> new AbstractMap.SimpleEntry<>(m.getId() + "String10", m)).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        println(newMap);
     }
 
     private void filterModelsWithInteger1AndMapStringValuesFromThemToStringCollectionAndPrintIt() {
-        // TODO Implement
+        List<String> strings = someModelCollection.stream().filter(m -> m.getIntValue() == 1).map(m -> m.getStringValue()).collect(Collectors.toList());
+        print(strings);
     }
 }

@@ -4,6 +4,7 @@ import com.andreibu.models.SomeModel;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Map;
 
 public abstract class StreamsBase implements Runnable {
     protected Collection<SomeModel> someModelCollection;
@@ -36,6 +37,12 @@ public abstract class StreamsBase implements Runnable {
 
     public static <T> void println(Collection<T> collection) {
         collection.forEach(e -> println(e.toString()));
+    }
+
+    public static <T> void println(Map<? extends Object, ? extends Object> map) {
+        map.entrySet().forEach(e -> {
+            System.out.println("key: " + e.getKey().toString() + "; value: " + e.getValue().toString());
+        });
     }
 
     public static <T> void print(Collection<T> collection) {
