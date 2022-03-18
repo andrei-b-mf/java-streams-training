@@ -9,8 +9,19 @@ import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class StreamsBase implements Runnable {
+    private boolean initSomeModels;
+    private boolean initCars;
     protected Collection<SomeModel> someModelCollection;
     protected Collection<Car> cars;
+
+    public StreamsBase() {
+        this(true, false);
+    }
+
+    public StreamsBase(boolean initSomeModels, boolean initCars) {
+        this.initSomeModels = initSomeModels;
+        this.initCars = initCars;
+    }
 
     @Override
     public void run() {
@@ -22,16 +33,22 @@ public abstract class StreamsBase implements Runnable {
     protected abstract void runInternal();
 
     protected void initialize() {
-        someModelCollection = new ArrayList<>();
-        cars = new ArrayList<>();
-        for(int i = 0; i < 20; i++) {
-            SomeModel m = new SomeModel(i % 2, String.valueOf(i), Float.valueOf(i));
-            someModelCollection.add(m);
-            int randomFactor = ThreadLocalRandom.current().nextInt(0, 3);
-            Car c = new Car(205, 50 + 5 * randomFactor, 14 + 2 * randomFactor);
-            cars.add(c);
+        if(initSomeModels) {
+            someModelCollection = new ArrayList<>();
+            for (int i = 0; i < 20; i++) {
+                SomeModel m = new SomeModel(i % 2, String.valueOf(i), Float.valueOf(i));
+                someModelCollection.add(m);
+            }
         }
 
+        if(initCars) {
+            cars = new ArrayList<>();
+            for (int i = 0; i < 20; i++) {
+                int randomFactor = ThreadLocalRandom.current().nextInt(0, 3);
+                Car c = new Car(205, 50 + 5 * randomFactor, 14 + 2 * randomFactor);
+                cars.add(c);
+            }
+        }
 
         // I must implement:
         // someModelCollection.stream().forEach();

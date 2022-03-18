@@ -21,31 +21,31 @@ public class StreamsMapExercises extends StreamsBase {
         filterModelsWithInteger1AndMapStringValuesFromThemToStringCollectionAndPrintIt();
     }
 
-    private void transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt() {
+    protected void transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt() {
         // TODO Implement
     }
 
-    private void transformModelsIntoACollectionOfDoublesUsingFloatValueAndPrintIt() {
+    protected void transformModelsIntoACollectionOfDoublesUsingFloatValueAndPrintIt() {
         // TODO Implement
     }
 
-    private void transformModelsIntoAnArrayOfLongsUsingIntValueAndPrintIt() {
+    protected void transformModelsIntoAnArrayOfLongsUsingIntValueAndPrintIt() {
         // TODO Implement
     }
 
-    private void buildNewSomeModelCollectionWithZeroIntegerValueAndPrintIt() {
+    protected void buildNewSomeModelCollectionWithZeroIntegerValueAndPrintIt() {
         // TODO Implement
     }
 
-    private void buildNewStringModelCollectionUsingStringValueAddingAPrefixAndPrintIt() {
+    protected void buildNewStringModelCollectionUsingStringValueAddingAPrefixAndPrintIt() {
         // TODO Implement
     }
 
-    private void buildNewSomeModelMapWhereKeyIsTheIDPlusString10AndPrintIt() {
+    protected void buildNewSomeModelMapWhereKeyIsTheIDPlusString10AndPrintIt() {
         // TODO Implement
     }
 
-    private void filterModelsWithInteger1AndMapStringValuesFromThemToStringCollectionAndPrintIt() {
+    protected void filterModelsWithInteger1AndMapStringValuesFromThemToStringCollectionAndPrintIt() {
         // TODO Implement
     }
 }

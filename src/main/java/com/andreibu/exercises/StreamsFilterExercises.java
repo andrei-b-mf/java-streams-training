@@ -15,19 +15,19 @@ public class StreamsFilterExercises extends StreamsBase {
         printAllModelsWithIntEqualsToZeroAndFloatBiggerThan10SeparateFilterLambdasPerCondition();
     }
 
-    private void printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase() {
+    protected void printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase() {
         // TODO Implement
     }
 
-    private void printAllModelsWithIntValueEqualsToOneUsingForEachWithSystemOutInside() {
+    protected void printAllModelsWithIntValueEqualsToOneUsingForEachWithSystemOutInside() {
         // TODO Implement
     }
 
-    private void printAllModelsWithFloatValueLessThanOrEqualsToThreeUsePredicateNegateUsingPrintMethodFromBase() {
+    protected void printAllModelsWithFloatValueLessThanOrEqualsToThreeUsePredicateNegateUsingPrintMethodFromBase() {
         // TODO Implement
     }
 
-    private void printAllModelsWithIntEqualsToZeroAndFloatBiggerThan10SeparateFilterLambdasPerCondition() {
+    protected void printAllModelsWithIntEqualsToZeroAndFloatBiggerThan10SeparateFilterLambdasPerCondition() {
         // TODO Implement
     }
 }
