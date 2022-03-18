@@ -20,7 +20,7 @@ public class Main {
         streamsMapExamples.run();
 
         System.out.println("Running streams flatMap examples");
-        StreamsFlatMapExamples streamsFlatMapSolutions = new StreamsFlatMapExamples();
-        streamsFlatMapSolutions.run();
+        StreamsFlatMapExamples streamsFlatMapExamples = new StreamsFlatMapExamples();
+        streamsFlatMapExamples.run();
     }
 }

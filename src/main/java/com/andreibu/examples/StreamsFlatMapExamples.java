@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StreamsFlatMapExamples extends StreamsBase {
+    public StreamsFlatMapExamples() {
+        super(false, true);
+    }
+
     @Override
     protected void runInternal() {
         // flatMap is used to map a single element from a source stream to multiple elements from a new stream and afterwards

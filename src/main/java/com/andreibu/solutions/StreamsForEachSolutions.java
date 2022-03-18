@@ -1,19 +1,13 @@
 package com.andreibu.solutions;
 
-import com.andreibu.base.StreamsBase;
+import com.andreibu.exercises.StreamsForEachExercises;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class StreamsForEachSolutions extends StreamsBase {
+public class StreamsForEachSolutions extends StreamsForEachExercises {
     @Override
-    protected void runInternal() {
-        printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
-        printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
-        printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized();
-    }
-
-    private void printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
+    protected void printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
         Set<Long> s = new HashSet<>();
         someModelCollection.stream().forEach(e -> {
             long currentThreadId = Thread.currentThread().getId();
@@ -25,7 +19,8 @@ public class StreamsForEachSolutions extends StreamsBase {
         System.out.println("Threads used: " + s.size());
     }
 
-    private void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
+    @Override
+    protected void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
         Set<Long> s = new HashSet<>();
         someModelCollection.parallelStream().forEach(e -> {
             System.out.println("ThreadId: " + Thread.currentThread().getId());
@@ -36,7 +31,8 @@ public class StreamsForEachSolutions extends StreamsBase {
         System.out.println("Threads used: " + s.size());
     }
 
-    private void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized() {
+    @Override
+    protected void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized() {
         Set<Long> s = new HashSet<>();
         someModelCollection.parallelStream().forEach(e -> {
             long currentThreadId = Thread.currentThread().getId();

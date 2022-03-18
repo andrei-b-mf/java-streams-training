@@ -5,15 +5,23 @@ import com.andreibu.base.StreamsBase;
 public class StreamsForEachExercises extends StreamsBase {
     @Override
     protected void runInternal() {
+        println("printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed");
         printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
+        println("printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed");
         printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
+        println("printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized");
+        printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized();
     }
 
-    private void printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
+    protected void printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
         // TODO Implement
     }
 
-    private void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
+    protected void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed() {
+        // TODO Implement
+    }
+
+    protected void printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized() {
         // TODO Implement
     }
 }
