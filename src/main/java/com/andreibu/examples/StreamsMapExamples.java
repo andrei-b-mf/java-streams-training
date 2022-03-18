@@ -9,9 +9,7 @@ import java.util.stream.Collectors;
 
 public class StreamsMapExamples extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         /**
          * Map is used for the transforming a collection of some Objects into a collection of different Objects
          * The word Map might be confusing at the beginning because it actually allows you to transform and it is not
@@ -77,7 +75,7 @@ public class StreamsMapExamples extends StreamsBase {
         println("Printing models collected into a stack");
         Stack<StringModel> stackedModels = someModelCollection.stream().map(e -> new StringModel(e.getId(), e.getStringValue()))
                 .collect(Collectors.toCollection(Stack::new));
-        while(!stackedModels.empty()) {
+        while (!stackedModels.empty()) {
             print("Model in stack: ", stackedModels.pop().toString());
             println("");
         }
@@ -87,7 +85,7 @@ public class StreamsMapExamples extends StreamsBase {
         println("Ordered map");
         // Creating a map that allows us to access the models based on their ID directly, but preserving ascending order
         Map<String, SomeModel> someModelsMappedByIdOrdered = someModelCollection.stream().map(
-                e -> new LinkedHashMap.SimpleEntry<>(e.getId(), e))
+                        e -> new LinkedHashMap.SimpleEntry<>(e.getId(), e))
                 .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(),
                         (k, v) -> {
                             throw new IllegalStateException(String.format("Duplicate key %s", k));
@@ -103,7 +101,7 @@ public class StreamsMapExamples extends StreamsBase {
         println("Unordered map");
         // Creating a map that allows us to access the models based on their ID directly
         Map<String, SomeModel> someModelsMappedById = someModelCollection.stream().map(
-                e -> new HashMap.SimpleEntry<>(e.getId(), e))
+                        e -> new HashMap.SimpleEntry<>(e.getId(), e))
                 .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
         someModelsMappedById.entrySet().stream().forEach(e -> {
             print("Model with ID: " + e.getKey() + ". ", e.getValue().toString());

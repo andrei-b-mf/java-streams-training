@@ -10,9 +10,7 @@ import java.util.stream.Collectors;
 
 public class StreamsMapSolutions extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         println("transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt");
         transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt();
         println("transformModelsIntoACollectionOfDoublesUsingFloatValueAndPrintIt");

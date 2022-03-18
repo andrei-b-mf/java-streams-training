@@ -9,9 +9,7 @@ import java.util.stream.Collectors;
 
 public class StreamsFilterExamples extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         /**
          * Filter is an intermediate operation that allows us to filter the stream
          */

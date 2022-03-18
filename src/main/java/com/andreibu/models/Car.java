@@ -3,6 +3,8 @@ package com.andreibu.models;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Car {
     private Map<WheelMounting, Wheel> wheels;
@@ -42,6 +44,10 @@ public class Car {
 
     public Collection<Wheel> getWheels() {
         return wheels.values();
+    }
+
+    public Collection<Wheel> getWheels(Set<WheelMounting> mountings) {
+        return wheels.entrySet().stream().filter(e -> mountings.contains(e.getKey())).map(e -> e.getValue()).collect(Collectors.toList());
     }
 
     public void drive() {

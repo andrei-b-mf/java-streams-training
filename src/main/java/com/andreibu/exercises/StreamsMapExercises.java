@@ -4,9 +4,7 @@ import com.andreibu.base.StreamsBase;
 
 public class StreamsMapExercises extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         println("transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt");
         transformModelsIntoACollectionOfIntegersUsingIntValueAndPrintIt();
         println("transformModelsIntoACollectionOfDoublesUsingFloatValueAndPrintIt");

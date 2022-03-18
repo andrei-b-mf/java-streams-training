@@ -9,9 +9,8 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class StreamsFilterSolutions extends StreamsBase {
-    public void run() {
-        initialize();
-
+    @Override
+    protected void runInternal() {
         println("printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase");
         printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase();
         println("printAllModelsWithIntValueEqualsToOneUsingForEachWithSystemOutInside");

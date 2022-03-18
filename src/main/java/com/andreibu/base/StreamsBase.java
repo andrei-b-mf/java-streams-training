@@ -12,6 +12,15 @@ public abstract class StreamsBase implements Runnable {
     protected Collection<SomeModel> someModelCollection;
     protected Collection<Car> cars;
 
+    @Override
+    public void run() {
+        initialize();
+
+        runInternal();
+    }
+
+    protected abstract void runInternal();
+
     protected void initialize() {
         someModelCollection = new ArrayList<>();
         cars = new ArrayList<>();

@@ -4,9 +4,7 @@ import com.andreibu.base.StreamsBase;
 
 public class StreamsFilterExercises extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         println("printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase");
         printAllModelsWithIntValueEqualsToOneUsingPrintMethodFromBase();
         println("printAllModelsWithIntValueEqualsToOneUsingForEachWithSystemOutInside");

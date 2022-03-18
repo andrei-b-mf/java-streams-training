@@ -7,9 +7,7 @@ import java.util.Set;
 
 public class StreamsForEachSolutions extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
         printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
         printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsedOptimized();

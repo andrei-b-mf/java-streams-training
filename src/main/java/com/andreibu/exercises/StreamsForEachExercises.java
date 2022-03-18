@@ -4,9 +4,7 @@ import com.andreibu.base.StreamsBase;
 
 public class StreamsForEachExercises extends StreamsBase {
     @Override
-    public void run() {
-        initialize();
-
+    protected void runInternal() {
         printSomeModelCollectionSequentiallyWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
         printSomeModelCollectionInParallelWithThreadIdAndPrintTheNumberOfDifferentThreadsUsed();
     }
