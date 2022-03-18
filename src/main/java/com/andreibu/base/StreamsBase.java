@@ -1,20 +1,28 @@
 package com.andreibu.base;
 
+import com.andreibu.models.Car;
 import com.andreibu.models.SomeModel;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class StreamsBase implements Runnable {
     protected Collection<SomeModel> someModelCollection;
+    protected Collection<Car> cars;
 
     protected void initialize() {
         someModelCollection = new ArrayList<>();
+        cars = new ArrayList<>();
         for(int i = 0; i < 20; i++) {
             SomeModel m = new SomeModel(i % 2, String.valueOf(i), Float.valueOf(i));
             someModelCollection.add(m);
+            int randomFactor = ThreadLocalRandom.current().nextInt(0, 3);
+            Car c = new Car(205, 50 + 5 * randomFactor, 14 + 2 * randomFactor);
+            cars.add(c);
         }
+
 
         // I must implement:
         // someModelCollection.stream().forEach();
